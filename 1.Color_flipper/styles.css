@@ -2,19 +2,21 @@ body {
   font-family: sans-serif;
   color: black;
   background-color: #CBE2E8;
+  height: 100vh;
 }
 
 #header {
   background-color: #CBE2E8;
   border-radius: 10px;
   text-align: center;
-  padding: 2px 0 15px 0;
-  width: 500px;
+  padding-bottom: 15px;
+  max-width: 500px;
+  height: 130px;
   margin: auto;
+  border: solid black 1px;
 }
 
 #btn {
-    
   height: 40px;
   border-radius: 5px;
   background-color: white;
@@ -37,7 +39,7 @@ body {
   display: grid;
   padding: 20px;
   grid-column-gap: 10px;
-  grid-row-gap: 30px;
+  grid-row-gap: 20px;
   grid-template-columns: 150px auto;
 }
 
@@ -47,8 +49,15 @@ body {
   width: 230px;
   height: 70px;
   z-index: 5;
+  border: solid black 1px;
 }
 
 .text-div h2 {
   padding-left: 10px;
+}
+
+@media (max-width: 500px) {
+  #grid {
+    grid-template-columns: 150px;
+  }
 }
