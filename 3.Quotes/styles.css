@@ -1,0 +1,135 @@
+:root {
+    --blue: rgb(105, 138, 246);
+
+    --clr-primary-9: hsl(205, 90%, 88%);
+    --clr-primary-5: hsl(205, 78%, 60%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flex {
+    display: flex;
+}
+
+h2 {
+    font-size: 2rem;
+    color:rgb(72, 70, 70);
+    font-weight: 400;
+}
+
+h4 {
+    color: var(--blue);
+}
+
+p {
+    margin-bottom: 0.25rem;
+    color: rgb(72, 70, 70);
+}
+
+body {
+    background-color: rgb(227, 227, 227);
+    font-family: 'League Spartan', sans-serif;
+    line-height: 1.5;
+}
+
+main {
+    min-height: 100vh;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.btn-div {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    min-width: 350px;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+
+.review {
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 600px;
+}
+
+#quote {
+    text-align: left;
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+#author {
+    margin-bottom: 0.7rem;
+    color: var(--blue);
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+
+#info {
+    margin-bottom: 0.9rem;
+    height: 20%;
+    font-size: 1.2rem;
+}
+
+.hooks {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--blue);
+}
+
+.next-btn,
+.prev-btn {
+    font-size: 1.2rem;
+    background: inherit;
+    cursor: pointer;
+    color:rgb(124, 124, 124);
+    margin: 3rem 0.5rem;
+    transition: all 0.3s linear;
+    border: none;
+    height: 50px;
+    min-width: 30px;
+    border-radius: 5px;
+}
+
+.btn-div {
+    margin-bottom: 15px;
+}
+
+.random-btn {
+    background-color: rgb(186, 202, 255);
+    border-radius: 10px;
+    border: solid var(--blue) 1px;
+    width: 130px;
+    height: 30px;
+    color: var(--blue);
+    cursor: pointer;
+    transition: all 0.3s linear;
+    align-items: center;
+}
+
+.next-btn:hover,
+.prev-btn:hover{
+    color: rgba(84, 117, 226, 0.778);
+    background-color: rgb(204, 204, 204);
+}
+
+.random-btn:hover {
+    background-color: rgba(84, 117, 226, 0.778);
+    color: rgba(53, 76, 151, 0.778);
+}
