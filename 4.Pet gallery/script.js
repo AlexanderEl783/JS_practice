@@ -74,27 +74,12 @@ const list = [
 ];
 
 const sectionCenter = document.querySelector('.section-center');
-const filterBtns = document.querySelectorAll('.filter-btn');
+const container = document.querySelector('.btn-container');
 
 window.addEventListener('DOMContentLoaded', function () {
     displayPetsPhotos(list);
+    displayButtons();
 });
-
-filterBtns.forEach(function (btn) {
-    btn.addEventListener('click', function (e) {
-        const category = e.currentTarget.dataset.id;
-        const petsCategory = list.filter(function (listItem) {
-            if (listItem.category === category) {
-                return listItem;
-            }
-        });
-        if (category === 'all') {
-            displayPetsPhotos(list);
-        } else {
-            displayPetsPhotos(petsCategory);
-        }
-    })
-})
 
 function displayPetsPhotos(listItems) {
     let displayPets = listItems.map(function (item) {
@@ -106,14 +91,37 @@ function displayPetsPhotos(listItems) {
     sectionCenter.innerHTML = displayPets;
 }
 
+function displayButtons() {
+    const categories = list.reduce(function (values, item) {
+        if (!values.includes(item.category)) {
+            values.push(item.category);
+        }
+        return values;
+    }, ['all']
+    );
+    const categoryBtns = categories.map(function (category) {
+        return ` <button class="filter-btn" type="button" data-id="${category}">${category}</button>`
+    })
+        .join("");
+    container.innerHTML = categoryBtns;
 
-// function displayPetlist() {
-//     let displayPet = list.map(function (item) {
-//         console.log(item);
-//         return `<article class="pets">
-//         <img src="${item.img}" class="photo" alt="${item.name}">
-//       </article>`
-//     });
-//     displayPet = displayPet.join("");
-//     sectionCenter.innerHTML = displayPet;
-// }
+    const filterBtns = container.querySelectorAll('.filter-btn');
+    filterBtns.forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+            const category = e.currentTarget.dataset.id;
+            const listCategory = list.filter(function (listItem) {
+                if (listItem.category === category) {
+                    return listItem;
+                }
+            });
+            if (category === 'all') {
+                displayPetsPhotos(list);
+            } else {
+                displayPetsPhotos(listCategory);
+            }
+        })
+    })
+}
+
+
+
