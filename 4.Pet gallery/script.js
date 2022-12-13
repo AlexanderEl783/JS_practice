@@ -79,13 +79,18 @@ const container = document.querySelector('.btn-container');
 window.addEventListener('DOMContentLoaded', function () {
     displayPetsPhotos(list);
     displayButtons();
+    displayOptions();
 });
 
 function displayPetsPhotos(listItems) {
     let displayPets = listItems.map(function (item) {
-        return `<article class="pets">
-        <img src="${item.img}" class="photo" alt="${item.name}">
+        return `<article class="pets"><img src="${item.img}" class="photo" alt="${item.name}">
       </article>`;
+        //   add delete buttons
+        //     return `<div class="photo-container"><article class="pets">
+        //     <img src="${item.img}" class="photo" alt="${item.name}">
+        //   </article><span class="material-symbols-outlined delete-btn">
+        //   delete</span></div>`;
     });
     displayPets = displayPets.join("");
     sectionCenter.innerHTML = displayPets;
@@ -123,5 +128,55 @@ function displayButtons() {
     })
 }
 
+// delete btns
+// const deleteBtn = document.querySelectorAll('.delete-btn');
+// deleteBtn.forEach(function (btn) {};
 
+// options 
+function displayOptions() {
+    const optionsCategory = list.reduce(function (values, item) {
+        if (!values.includes(item.category)) {
+            values.push(item.category);
+        }
+        return values;
+    }, []
+    );
+    const options = optionsCategory.map(function (item) {
+        return `<option value="${item}" data-id="${item}">${item}</option>`
+    })
+        .join("");
+    select.innerHTML = options;
+}
 
+const select = document.getElementById('select');
+const btnAdd = document.getElementById('add-btn');
+const urlId = document.getElementById('urlId');
+const newCategoryDiv = document.getElementById('newCategory-div');
+const newCategorytId = document.getElementById('newCategorytId');
+const newCategoryBtn = document.getElementById('new-category-btn');
+
+newCategoryBtn.addEventListener('click', function () {
+    newCategoryDiv.classList.toggle('hide-category');
+    select.classList.toggle('hide-category');
+})
+
+btnAdd.addEventListener('click', () => {
+    let Object = {};
+    Object.id = list.length + 1;
+    Object.img = urlId.value;
+
+    if (!select.classList.contains('hide-category')) {
+        Object.category = select.value;
+    }
+    else {
+        Object.category = newCategorytId.value;
+    };
+    list.push(Object);
+
+    displayButtons();
+    displayPetsPhotos(list);
+    newCategoryDiv.classList.add('hide-category');
+    select.classList.remove('hide-category');
+    console.log(list);
+    displayOptions();
+});
