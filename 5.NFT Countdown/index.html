@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Video</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+</head>
+<!-- preloader -->
+<div class="preloader">
+  <img src="./preloader.gif" alt="preloader">
+</div>
+<body>
+  <!-- header -->
+  <header>
+    <video class="video-container" muted autoplay loop>
+      <source src="./video.mp4" type="video/mp4"/>
+    </video>
+    <h1 class="giveaway">NFT Drop</h1>
+    <!-- countdown -->
+    <div class="deadline">
+      <!-- days -->
+      <div class="deadline-format">
+        <div>
+          <h4 class="days">34</h4>
+          <span>days</span>
+        </div>
+      </div>
+      <!-- end of days -->
+      <!-- hours -->
+      <div class="deadline-format">
+        <div>
+          <h4 class="hours">34</h4>
+          <span>hours</span>
+        </div>
+      </div>
+      <!-- end of hours -->
+      <!-- minutes -->
+      <div class="deadline-format">
+        <div>
+          <h4 class="minutes">34</h4>
+          <span>mins</span>
+        </div>
+      </div>
+      <!-- end of days -->
+      <!-- minutes -->
+      <div class="deadline-format">
+        <div>
+          <h4 class="seconds">34</h4>
+          <span>secs</span>
+        </div>
+      </div>
+      <!-- end of minutes -->
+    </div>
+    <!-- end of countdown -->
+    <!-- nft div -->
+    <div class="nft-div">
+      <iframe id="nft-form"
+    src="https://gateway.ipfscdn.io/ipfs/Qmcine1gpZUbQ73nk7ZGCcjKBVFYXrEtqrhujXk3HDQ6Nn/erc721.html?contract=0x1071e3B8d4f9C86397a3F5a4b82b0CB73eB5175b&chainId=137&theme=dark"
+    width="500px"
+    height="500px"
+    style="max-width:100%;"
+    frameborder="0"
+    ></iframe>
+    </div>
+  </header>
+   <script src="script.js"></script>
+</body>
+</html>
