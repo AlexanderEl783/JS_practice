@@ -81,10 +81,12 @@ h1 {
   height: 510px;
   border: solid rgba(255,255,255,0.3) 1px;
   margin-bottom: 10px;
+  animation: glow 1s infinite ;
+  transition:0.5s;
 }
 
 .nft-div:hover {
-  animation: glow 1s infinite ;
+  animation: glow 10s infinite ;
   transition:0.5s;
 }
 
@@ -126,8 +128,16 @@ h1 {
 
 @media screen and (max-width: 768px) {
   .nft-div {
-    width:300px;
+    width:350px;
+    border: solid 5px ;
+    margin-bottom: 0px;
   }
+
+  #nft-form {
+    margin-top: 0.9px;
+    }
+  }
+  
   h1 {
   font-size: 2rem;
   }
