@@ -5,16 +5,17 @@
 }
 
 body {
-  font-family: 'Oswald', sans-serif;
+  font-family:'Oswald', sans-serif;
 }
 
 header {
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   display: grid;
   place-items: center;
   background: rgba(0, 0, 0, 0.6);
-  overflow:hidden ;
+  grid-template-columns: 1fr;
+  grid-template-rows: 90px 40px 600px;
 }
 
 main {
@@ -30,11 +31,11 @@ h1 {
   font-size: 3rem;
   color: rgb(216, 212, 212);
   text-align: center;
-  padding-bottom: -100px;
 }
 
 .giveaway {
   margin: 0px 30px;
+  align-items: center;
 }
 
 .video-container {
@@ -72,16 +73,16 @@ h1 {
   display: block;
   margin: auto;
   margin-top: 3.5px;
-  align-items: center;
 }
 
 .nft-div{
+  margin-left: auto;
+  margin-right: auto;
   background-color: black;
   border-radius: 1rem;
   width: 511px;
   height: 510px;
   border: solid rgba(255,255,255,0.3) 1px;
-  margin-bottom: 10px;
   animation: glow 1s infinite ;
   transition:0.5s;
 }
@@ -93,7 +94,7 @@ h1 {
 
 @keyframes glow{
   0%{
-  box-shadow: 5px 5px 20px rgb(93, 52, 168),-5px -5px 20px rgb(93, 52, 168);}
+  box-shadow: 5px 5px 20px rgb(93, 52, 168),-5px -5px 20px rgb(93, 52, 168)}
   
   50%{
   box-shadow: 5px 5px 20px rgb(81, 224, 210),-5px -5px 20px rgb(81, 224, 210)
@@ -106,14 +107,14 @@ h1 {
 /* countdown */
 .deadline {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .deadline-format {
   color: rgb(216, 212, 212);
-  margin-right: 1rem;
   width: 5rem;
   height: 2rem;
   display: grid;
-  place-items: center;
   text-align: center;
 }
 .deadline-format span {
@@ -127,18 +128,15 @@ h1 {
   letter-spacing: 0.25rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 810px) {
   .nft-div {
     width:350px;
     border: solid 5px ;
     margin-bottom: 0px;
   }
-
   #nft-form {
     margin-top: -0.9px;
     }
-  }
-  
   h1 {
   font-size: 2rem;
   }
